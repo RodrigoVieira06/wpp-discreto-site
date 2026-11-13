@@ -1,0 +1,11 @@
+{
+ "page": "dist/index.html",
+ "url": null,
+ "root": "dist",
+ "kind": "software",
+ "category": "Extensão de desfoque para WhatsApp Web",
+ "primary": "Instalar no Chrome",
+ "rounds": 3,
+ "start": "2026-11-13T21:05:05.862Z",
+ "by": "gate.mjs --start"
+}

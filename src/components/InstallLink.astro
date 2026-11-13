@@ -1,0 +1,6 @@
+---
+import { site } from '../lib/site';
+interface Props { secondary?: boolean; }
+const { secondary = false } = Astro.props;
+---
+<a class:list={['btn', secondary ? 'btn--secondary' : 'btn--primary']} href={site.storeUrl} target="_blank" rel="noopener noreferrer"><img loading="lazy" src="/icons/chrome.svg" alt="" width="20" height="20" />Instalar no Chrome</a>

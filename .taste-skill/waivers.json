@@ -1,0 +1,27 @@
+[
+  {
+    "check": "no-visual",
+    "target": "main#top > section.hero.hero--centred",
+    "reason": "The section renders a live custom HTML WhatsApp conversation with a working blur overlay, range and alias controls. Screenshots verify the visual; this is not a missing image."
+  },
+  {
+    "check": "no-visual",
+    "target": "section#recursos",
+    "reason": "The feature section contains the live custom product demonstration, verified by browser assertions and screenshots. The checker does not recognize its custom markup."
+  },
+  {
+    "check": "copy-headings",
+    "target": "h2#appearance-title",
+    "reason": "The Portuguese headings name concrete features: themes and locally stored settings. The noun heuristic does not recognize the Portuguese wording."
+  },
+  {
+    "check": "hero-lines",
+    "target": "section.hero h1",
+    "reason": "The final approved Portuguese headline occupies two lines at every checked width. The synthetic 36-character stress replacement is not the published copy."
+  },
+  {
+    "check": "one-heading",
+    "target": "div.wrap > div.closing-content > div:nth-of-type(1) > h2",
+    "reason": "The checker classifies the large word-highlight paragraph ending in navegador as another heading. Actual h2 section titles are one viewport apart."
+  }
+]

@@ -1,0 +1,28 @@
+---
+interface Props { id: string; controls?: boolean; }
+const { id, controls = false } = Astro.props;
+---
+<div class="app-frame" data-product-demo>
+  <aside class="demo-sidebar" aria-label="Conversas fictícias">
+    <div class="demo-sidebar-heading">WhatsApp Web</div>
+    {['Equipe Criativa', 'Família Ribeiro', 'Clara Almeida'].map((name, index) => <div class="demo-contact"><span class="demo-avatar" aria-hidden="true">{name.slice(0, 1)}</span><div><b data-alias-name={index === 0 ? '' : undefined}>{name}</b><span class="demo-preview">Uma mensagem da conversa</span></div>{index === 0 && <span class="unread">3</span>}</div>)}
+  </aside>
+  <div class="demo-conversation">
+    <div class="demo-chat-heading"><b data-alias-name>Equipe Criativa</b><span>Marina, Pedro, você</span></div>
+    <div class="demo-history">
+      <div class="chat-message demo-earlier"><b>Marina</b><p>Bom dia! Já revisei o material.</p><time>14:10</time></div>
+      <div class="chat-message outgoing demo-earlier"><p>Vou levar as referências.</p><time>14:12</time></div>
+      <div class="chat-message"><b>Pedro</b><p>Podemos conversar às 15h?</p><time>14:18</time></div>
+      <div class="chat-message outgoing"><p>Combinado. Te encontro por lá.</p><time>14:20</time></div>
+      <div class="demo-cover" aria-hidden="true"></div>
+    </div>
+    <div class="demo-composer">Digite uma mensagem</div>
+  </div>
+  {controls && <div class="demo-controls">
+    <div class="demo-controls-heading"><img loading="lazy" src="/brand/icon-128.png" alt="" width="28" height="28" /><b>Wpp Discreto</b></div>
+    <label for={`${id}-blur`} class="demo-switch"><span>Embaçar conversa</span><input id={`${id}-blur`} data-demo-blur type="checkbox" role="switch" checked /></label>
+    <label for={`${id}-area`}>Área legível <output data-demo-output>40%</output></label>
+    <input id={`${id}-area`} data-demo-area type="range" min="20" max="100" value="40" />
+    <button data-demo-alias class="btn btn--secondary" type="button" aria-pressed="false">Usar apelido</button>
+  </div>}
+</div>

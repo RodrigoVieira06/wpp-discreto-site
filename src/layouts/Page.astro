@@ -1,0 +1,28 @@
+---
+import '../styles/site.scss';
+const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site) : undefined;
+---
+<!doctype html>
+<html lang="pt-BR" data-type="software" data-radius="round" data-buttons="pill" data-motion data-grade="evening">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="page-type" content="software" /><meta name="site-kind" content="software" />
+  <title>Wpp Discreto: desfoque e apelidos no WhatsApp Web</title>
+  <meta name="description" content="Escolha a área legível das conversas, desfoque mídias e use apelidos locais no WhatsApp Web com o Wpp Discreto para Chrome." />
+  <meta property="og:title" content="Wpp Discreto para WhatsApp Web" /><meta property="og:description" content="Desfoque de conversas e mídias, apelidos locais e temas claro e escuro." /><meta property="og:type" content="website" /><meta property="og:image" content={Astro.site ? new URL('/product/conversation.png', Astro.site).href : '/product/conversation.png'} /><meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#111a19" /><link rel="icon" href="/brand/icon-128.png" type="image/png" />
+  {canonical && <link rel="canonical" href={canonical} />}
+  <link rel="preload" href="/fonts/onest.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="stylesheet" href="/design-kit/system.css" /><link rel="stylesheet" href="/design-kit/layout/layout.css" /><link rel="stylesheet" href="/design-kit/motion/motion.css" /><link rel="stylesheet" href="/design-kit/moments/word-highlight/moment.css" />
+  <script is:inline>try{const t=localStorage.getItem('wpp-site-theme');document.documentElement.dataset.grade=(t==='dark'||(t!=='light'&&matchMedia('(prefers-color-scheme: dark)').matches))?'evening':'day';}catch{document.documentElement.dataset.grade=matchMedia('(prefers-color-scheme: dark)').matches?'evening':'day';}document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700);</script>
+</head>
+<body>
+  <slot />
+  <script src="../scripts/site.ts"></script>
+  <script is:inline type="module" src="/design-kit/system.js"></script>
+  <script is:inline type="module" src="/design-kit/layout/layout.js"></script>
+  <script is:inline type="module" src="/design-kit/motion/motion.js"></script>
+  <script is:inline type="module" src="/design-kit/moments/moments.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+:root {
+  --p-bg: #111a19; --p-surface: #17231f; --p-ink: #e8eeec; --p-muted: #aebfb6;
+  --p-accent: #a8efc5; --p-accent-ink: #111a19; --p-action: #a8efc5; --p-action-ink: #111a19;
+  --p-inv-bg: #e8eeec; --p-inv-surface: #d7dddb; --p-inv-ink: #111a19; --p-inv-muted: #535c5a;
+  --p-inv-accent: #111a19; --p-inv-accent-ink: #e8eeec; --p-inv-action: #111a19; --p-inv-action-ink: #e8eeec;
+  --font-display: "Onest", system-ui, sans-serif;
+  --font-text: "Onest", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --display-weight: 400;
+  --display-tracking: -0.035em;
+  --display-tracking-xl: -0.04em;
+}

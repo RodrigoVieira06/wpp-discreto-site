@@ -1,0 +1,19 @@
+gate: checking dist/index.html (software); this takes a few minutes on a CPU Chrome
+gate: rounds used up; 3 FAIL open
+  FAIL container-edges  div.appearance-layout > div:nth-of-type(1) > fieldset.theme-options > label:nth-of-type(1)  [1440]
+       1 text block starts on a left line at x 104, 24px from the container's left: text starts on the container's left, or on one split line (x 623, 732, 841) (SR-6)
+       fix: start the text on the container's left, or on the one split line every split shares
+  FAIL stagger          div.hero__window > div.app-frame > div.demo-conversation > div.demo-history "Marina Bom di  [390]
+       4 rows start at 3 different left offsets (+0, +152, +0, +111px)
+       fix: start every row of the list on one left edge
+  FAIL menu-toggle      header.nav.nav--centre > div.wrap.nav__bar > div.nav__actions > button.theme-toggle "Ativa  [390]
+       the menu button ("Ativar tema escuro") has no aria-expanded: a screen reader cannot tell the menu is open or shut
+       fix: use the starter's button: <button class="nav__toggle" type="button" aria-expanded="false" aria-label="Menu">; system.js flips it
+  WAIVED no-visual main#top > section.hero.hero--centred "Desfoque no WhatsApp Web": The section renders a live custom HTML WhatsApp conversation with a working blur overlay, range and alias controls. Screenshots verify the visual; this is not a missing image.
+  WAIVED no-visual section#recursos "Ajustes para cada conversa": The feature section contains the live custom product demonstration, verified by browser assertions and screenshots. The checker does not recognize its custom markup.
+  WAIVED copy-headings h2#appearance-title "Temas claro e escuro": The Portuguese headings name concrete features: themes and locally stored settings. The noun heuristic does not recognize the Portuguese wording.
+  WAIVED one-heading div.wrap > div.closing-content > div:nth-of-type(1) > h2 "Dúvidas sobre a extens: The checker classifies the large word-highlight paragraph ending in navegador as another heading. Actual h2 section titles are one viewport apart.
+  WAIVED hero-lines section.hero h1: The final approved Portuguese headline occupies two lines at every checked width. The synthetic 36-character stress replacement is not the published copy.
+  19 WARN (not blocking), first: scroll-reveal section#dados > div.wrap > div.mo-wh > p; copy-buttons header.nav.nav--centre > div.wrap.nav__b; off-grid div.appearance-layout > div:nth-of-type(; links div.wrap.nav__bar > nav.nav__links > div; nav-labels header.nav.nav--centre > div.wrap.nav__b
+Stop fixing: put these open FAILs and the waivers in your report, then finish.
+GATE: OPEN 3 (rounds used up)
