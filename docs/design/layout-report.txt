@@ -1,0 +1,45 @@
+
+1440x900  lines x 80 and 1360, nav 72px, one screen 900px
+  hero 900 tall; h1 72px/1.02, 2 lines, 488x147 at 476,120; lead 20/30, 2 lines, 692 wide; buttons 3 x 44; visual 1280x351 at 80,485
+  stress: centred h1 at 36 of 36 characters takes 3 lines, hero 900 tall
+  section section.hero.hero--centred section.hero.hero--centred "Desfo y     0  h   900  content 716
+  section #recursos section.section "Ajustes para cada conversaExperi" y   900  h   900  content 627
+  section #aparencia section.section "Temas claro e escuroEscolha um t y  1800  h   900  content 565
+  section #dados section.section "Os ajustes ficam no navegadorSeu"    y  2700  h   900  content 478
+  hero-lines       section.hero h1: the check fills the h1 to 36 characters (this hero's maxChars in heroes.json), not the page's own: it takes 3 lines at 1440, 2 at most
+
+1024x768  lines x 80 and 944, nav 72px, one screen 768px
+  hero 768 tall; h1 59.3215px/1.02, 2 lines, 402x121 at 311,120; lead 18.8186/28.228, 2 lines, 650 wide; buttons 3 x 44; visual 864x249 at 80,455
+  stress: centred h1 at 36 of 36 characters takes 3 lines, hero 768 tall
+  section section.hero.hero--centred section.hero.hero--centred "Desfo y     0  h   768  content 584
+  section #recursos section.section "Ajustes para cada conversaExperi" y   768  h   768  content 562
+  section #aparencia section.section "Temas claro e escuroEscolha um t y  1536  h   768  content 557
+  section #dados section.section "Os ajustes ficam no navegadorSeu"    y  2304  h   768  content 437
+  no findings
+
+820x1180  lines x 48 and 772, nav 72px, one screen 1180px
+  hero 1180 tall; h1 53.1036px/1.02, 2 lines, 360x108 at 230,120; lead 18.2352/27.3528, 2 lines, 630 wide; buttons 3 x 44; visual 724x675 at 48,441
+  stress: centred h1 at 36 of 36 characters takes 3 lines, hero 1180 tall
+  section section.hero.hero--centred section.hero.hero--centred "Desfo y     0  h  1180  content 996
+  section #recursos section.section "Ajustes para cada conversaExperi" y  1180  h  1180  content 648
+  section #aparencia section.section "Temas claro e escuroEscolha um t y  2360  h  1180  content 778
+  section #dados section.section "Os ajustes ficam no navegadorSeu"    y  3540  h  1180  content 417
+  no findings
+
+768x1024  lines x 48 and 720, nav 72px, one screen 1024px
+  hero 1024 tall; h1 51.5186px/1.02, 2 lines, 349x105 at 210,120; lead 18.0865/27.1297, 2 lines, 625 wide; buttons 3 x 44; visual 672x523 at 48,437
+  stress: centred h1 at 36 of 36 characters takes 3 lines, hero 1024 tall
+  section section.hero.hero--centred section.hero.hero--centred "Desfo y     0  h  1024  content 840
+  section #recursos section.section "Ajustes para cada conversaExperi" y  1024  h  1024  content 647
+  section #aparencia section.section "Temas claro e escuroEscolha um t y  2048  h  1024  content 777
+  section #dados section.section "Os ajustes ficam no navegadorSeu"    y  3072  h  1024  content 412
+  no findings
+
+390x844  lines x 24 and 366, nav 56px, one screen 844px
+  hero 844 tall; h1 40px/1.02, 2 lines, 271x82 at 59,96; lead 17.0054/25.5081, 3 lines, 342 wide; buttons 2 x 44; visual 342x354 at 24,466
+  stress: centred h1 at 36 of 36 characters takes 3 lines, hero 844 tall
+  section section.hero.hero--centred section.hero.hero--centred "Desfo y     0  h   844  content 724
+  section #recursos section.section "Ajustes para cada conversaExperi" y   844  h   976  content 832
+  section #aparencia section.section "Temas claro e escuroEscolha um t y  1820  h   844  content 615
+  section #dados section.section "Os ajustes ficam no navegadorSeu"    y  2664  h   844  content 500
+  no findings

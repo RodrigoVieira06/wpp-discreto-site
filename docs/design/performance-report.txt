@@ -1,0 +1,54 @@
+
+perf dist/index.html @ 1440px
+  PASS  host CPU load (before/after)               6/0 %          
+  PASS  total transfer                             414.3 KiB      html 4.2K  css 49.4K  js 47.9K  font 188.7K  img 102.2K  other 21.9K
+  PASS  requests                                   21             21 by load
+  PASS  images bytes                               102.2 KiB      5 files
+  PASS  largest image                              33.3 KiB       product/popup-dark.png
+  PASS  JS parsed                                  130.3 KiB      7 files, 47.9K gz
+  PASS  CSS                                        49.4 KiB       5 files
+  PASS  font families                              1              Onest
+  PASS  font files                                 1              188.7K
+  WARN  font bytes                                 188.7 KiB      
+  PASS  images without width+height                0              
+  WARN  below-fold images not lazy                 1              icon-128.png
+  PASS  oversized images (natural > 2.2x shown)    0              
+  PASS  WebGL live at load                         0              
+  PASS  WebGL live at bottom                       0              
+  PASS  WebGL peak live                            0              0 contexts made in all
+  PASS  long tasks                                 0              runs 3, 0..0, max 0ms
+  PASS  blocking time                              0 ms           runs 3, 0..0 ms; at load 0ms
+  PASS  FCP (CPU, relative)                        76 ms          runs 3, 72..84
+  PASS  LCP (CPU, relative)                        84 ms          runs 3, 76..120, h1
+  PASS  layout shift                               0.000          runs 3, 0.000..0.000; at load 0.000
+  PASS  modules loaded, never mounted              0              
+  PASS  broken requests                            0              
+  PASS  page height                                5 screens      DOM 276 nodes
+
+perf dist/index.html @ 390px
+  PASS  host CPU load (before/after)               6/0 %          
+  PASS  total transfer                             378.8 KiB      html 4.2K  css 49.4K  js 47.9K  font 188.7K  img 84.5K  other 4.2K
+  PASS  requests                                   19             19 by load
+  PASS  images bytes                               84.5 KiB       4 files
+  PASS  largest image                              33.3 KiB       product/popup-dark.png
+  PASS  JS parsed                                  130.3 KiB      7 files, 47.9K gz
+  PASS  CSS                                        49.4 KiB       5 files
+  PASS  font families                              1              Onest
+  PASS  font files                                 1              188.7K
+  WARN  font bytes                                 188.7 KiB      
+  PASS  images without width+height                0              
+  WARN  below-fold images not lazy                 1              icon-128.png
+  WARN  oversized images (natural > 2.2x shown)    2              popup-dark.png 380px for 159; popup-light.png 380px for 159
+  PASS  WebGL live at load                         0              
+  PASS  WebGL live at bottom                       0              
+  PASS  WebGL peak live                            0              0 contexts made in all
+  PASS  long tasks                                 0              runs 3, 0..0, max 0ms
+  PASS  blocking time                              0 ms           runs 3, 0..0 ms; at load 0ms
+  PASS  FCP (CPU, relative)                        56 ms          runs 3, 52..56
+  PASS  LCP (CPU, relative)                        68 ms          runs 3, 64..72, h1
+  PASS  layout shift                               0.000          runs 3, 0.000..0.000; at load 0.000
+  PASS  modules loaded, never mounted              0              
+  PASS  broken requests                            0              
+  PASS  page height                                5.4 screens    DOM 276 nodes
+
+SUMMARY dist/index.html: 0 FAIL, 5 WARN  -> WARN

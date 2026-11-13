@@ -46,3 +46,6 @@ Five explicit waivers are recorded in .taste-skill/waivers.json: two custom HTML
 
 
 The final layout check found no findings at 1024, 820, 768 and 390 px after the tablet layout change. At 1440 px its remaining finding is the synthetic hero-headline stress test, covered by the final-copy waiver. Mobile reduced-motion and desktop dark-theme captures were inspected visually. The visible mobile theme button has a 44 px target.
+
+
+Final performance result: 0 FAIL and 5 WARN across desktop/mobile. Transfer was 414 KiB desktop and 379 KiB mobile, with zero measured layout shift and no broken requests. Remaining warnings concern the font size, one repeated icon classified below the fold, and the mobile theme captures' source-to-display resolution. These are recorded optimizations, not a claimed all-green performance report.
