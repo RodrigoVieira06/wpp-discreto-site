@@ -1,9 +1,6 @@
-import {
-  normalizeVisibleArea,
-  parseTheme,
-  resolveTheme,
-  type Theme,
-} from '../lib/appearance';
+import { parseTheme, resolveTheme, type Theme } from '../lib/appearance';
+import { scrollMotion } from '../lib/motion';
+import { activeSection } from '../lib/navigation';
 
 const system = matchMedia('(prefers-color-scheme: dark)');
 let preference: Theme = 'auto';
@@ -35,47 +32,97 @@ function saveTheme(value: Theme) {
   }
   applyTheme();
 }
+let changingTheme = false;
 document
-  .querySelector('[data-theme-toggle]')
-  ?.addEventListener('click', () =>
-    saveTheme(
-      document.documentElement.dataset.grade === 'evening' ? 'light' : 'dark',
-    ),
-  );
-for (const radio of document.querySelectorAll<HTMLInputElement>(
-  'input[name="theme"]',
-))
-  radio.addEventListener('change', () => saveTheme(parseTheme(radio.value)));
+  .querySelector<HTMLButtonElement>('[data-theme-toggle]')
+  ?.addEventListener('click', async (event) => {
+    if (changingTheme) return;
+    const button = event.currentTarget as HTMLButtonElement;
+    const box = button.getBoundingClientRect();
+    document.documentElement.style.setProperty(
+      '--theme-x',
+      `${box.left + box.width / 2}px`,
+    );
+    document.documentElement.style.setProperty(
+      '--theme-y',
+      `${box.top + box.height / 2}px`,
+    );
+    const update = () =>
+      saveTheme(
+        document.documentElement.dataset.grade === 'evening' ? 'light' : 'dark',
+      );
+    if (
+      !document.startViewTransition ||
+      matchMedia('(prefers-reduced-motion: reduce)').matches
+    ) {
+      update();
+      return;
+    }
+    changingTheme = true;
+    try {
+      await document.startViewTransition(update).finished;
+    } finally {
+      changingTheme = false;
+    }
+  });
 system.addEventListener('change', () => {
   if (preference === 'auto') applyTheme();
 });
 applyTheme();
-for (const demo of document.querySelectorAll<HTMLElement>(
-  '[data-product-demo]',
-)) {
-  const area = demo.querySelector<HTMLInputElement>('[data-demo-area]');
-  area?.addEventListener('input', () => {
-    const value = normalizeVisibleArea(Number(area.value));
-    demo.style.setProperty('--covered', `${100 - value}%`);
-    const output = demo.querySelector('output');
-    if (output) output.textContent = `${value}%`;
-  });
-  demo
-    .querySelector<HTMLInputElement>('[data-demo-blur]')
-    ?.addEventListener('change', (event) =>
-      demo.classList.toggle(
-        'unmasked',
-        !(event.currentTarget as HTMLInputElement).checked,
-      ),
+const sectionLinks = [
+  ...document.querySelectorAll<HTMLAnchorElement>('.nav__link[href^="#"]'),
+];
+const sections = sectionLinks
+  .map((link) => document.querySelector<HTMLElement>(link.hash))
+  .filter((section): section is HTMLElement => Boolean(section));
+let scrollPending = false;
+function updateNavigation() {
+  scrollPending = false;
+  const current = activeSection(
+    sections.map((section) => ({
+      id: section.id,
+      top: section.getBoundingClientRect().top,
+    })),
+    Math.min(innerHeight * 0.35, 220),
+  );
+  for (const link of sectionLinks) {
+    if (link.hash === `#${current}`)
+      link.setAttribute('aria-current', 'location');
+    else link.removeAttribute('aria-current');
+  }
+  const distance = document.documentElement.scrollHeight - innerHeight;
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.documentElement.style.setProperty(
+      '--ambient-shift',
+      `${scrollMotion(scrollY, distance) * -36}px`,
     );
-  demo
-    .querySelector<HTMLButtonElement>('[data-demo-alias]')
-    ?.addEventListener('click', (event) => {
-      const button = event.currentTarget as HTMLButtonElement;
-      const active = button.getAttribute('aria-pressed') !== 'true';
-      button.setAttribute('aria-pressed', String(active));
-      button.textContent = active ? 'Remover apelido' : 'Usar apelido';
-      for (const name of demo.querySelectorAll('[data-alias-name]'))
-        name.textContent = active ? 'Meu trabalho' : 'Equipe Criativa';
-    });
+    for (const section of sections) {
+      const box = section.getBoundingClientRect();
+      const focus = Math.max(
+        0,
+        1 - Math.abs(box.top - innerHeight * 0.3) / innerHeight,
+      );
+      section.style.setProperty('--section-focus', String(focus));
+    }
+  }
+  document.documentElement.style.setProperty(
+    '--reading-progress',
+    String(scrollMotion(scrollY, distance)),
+  );
 }
+function scheduleNavigation() {
+  if (!scrollPending) {
+    scrollPending = true;
+    requestAnimationFrame(updateNavigation);
+  }
+}
+addEventListener('scroll', scheduleNavigation, { passive: true });
+addEventListener('resize', scheduleNavigation);
+updateNavigation();
+
+document.addEventListener('visibilitychange', () =>
+  document.documentElement.classList.toggle(
+    'page-backgrounded',
+    document.hidden,
+  ),
+);

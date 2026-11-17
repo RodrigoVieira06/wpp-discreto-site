@@ -4,19 +4,19 @@ const { id, controls = false } = Astro.props;
 ---
 <div class="app-frame" data-product-demo>
   <aside class="demo-sidebar" aria-label="Conversas fictícias">
-    <div class="demo-sidebar-heading">WhatsApp Web</div>
-    {['Equipe Criativa', 'Família Ribeiro', 'Clara Almeida'].map((name, index) => <div class="demo-contact"><span class="demo-avatar" aria-hidden="true">{name.slice(0, 1)}</span><div><b data-alias-name={index === 0 ? '' : undefined}>{name}</b><span class="demo-preview">Uma mensagem da conversa</span></div>{index === 0 && <span class="unread">3</span>}</div>)}
+    <div class="demo-sidebar-heading">WhatsApp <span aria-hidden="true">···</span></div><div class="demo-search">Pesquisar ou começar conversa</div><div class="demo-tabs"><span>Tudo</span><span>Não lidas</span><span>Grupos</span></div>
+    {['Equipe Criativa', 'Família Vieira', 'Fulano Beltrano', 'Futebol de sábado', 'Leitura de Casa'].map((name, index) => <div class="demo-contact"><span class="demo-avatar" aria-hidden="true">{name.slice(0, 1)}</span><div><b data-alias-name={index === 0 ? '' : undefined}>{name}</b><span class="demo-preview">Uma mensagem da conversa</span></div>{index === 0 && <span class="unread">3</span>}</div>)}
   </aside>
   <div class="demo-conversation">
-    <div class="demo-chat-heading"><b data-alias-name>Equipe Criativa</b><span>Marina, Pedro, você</span></div>
-    <div class="demo-history">
+    <div class="demo-chat-heading"><span class="demo-avatar" aria-hidden="true">EC</span><div><b data-alias-name>Equipe Criativa</b><span>Marina, Ciclano, você</span></div><svg class="demo-chat-actions" aria-hidden="true" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></svg></div>
+    <div class="demo-history"><div class="demo-day">Hoje</div>
       <div class="chat-message demo-earlier"><b>Marina</b><p>Bom dia! Já revisei o material.</p><time>14:10</time></div>
       <div class="chat-message outgoing demo-earlier"><p>Vou levar as referências.</p><time>14:12</time></div>
-      <div class="chat-message"><b>Pedro</b><p>Podemos conversar às 15h?</p><time>14:18</time></div>
+      <div class="chat-message"><b>Ciclano</b><p>Podemos conversar às 15h?</p><time>14:18</time></div>
       <div class="chat-message outgoing"><p>Combinado. Te encontro por lá.</p><time>14:20</time></div>
       <div class="demo-cover" aria-hidden="true"></div>
     </div>
-    <div class="demo-composer">Digite uma mensagem</div>
+    <div class="demo-composer"><span aria-hidden="true">＋</span><span>Digite uma mensagem</span></div>
   </div>
   {controls && <div class="demo-controls">
     <div class="demo-controls-heading"><img loading="lazy" src="/brand/icon-128.png" alt="" width="28" height="28" /><b>Wpp Discreto</b></div>

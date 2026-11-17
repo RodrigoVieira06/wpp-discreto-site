@@ -1,0 +1,18 @@
+---
+const slides = [
+  { file: 'conversation', alt: 'WhatsApp com conversa desfocada e os controles reais do Wpp Discreto' },
+  { file: 'themes', alt: 'Interface real da extensão nos temas claro e escuro' },
+  { file: 'text-size', alt: 'Configuração do tamanho do texto da extensão' },
+  { file: 'media', alt: 'Proteção de fotos, vídeos e figurinhas no WhatsApp' },
+];
+---
+<div class="product-carousel" data-carousel role="region" aria-label="Exemplos do Wpp Discreto" aria-roledescription="carrossel">
+  <div class="carousel-viewport">
+    <div class="carousel-track">
+      {[false, true].map(duplicate => <div class="carousel-group" aria-hidden={duplicate ? 'true' : undefined}>
+        {slides.map((slide, index) => <img src={`/product/screenshots/${slide.file}.png`} alt={duplicate ? '' : slide.alt} width="1280" height="800" loading={index === 0 && !duplicate ? 'eager' : 'lazy'} draggable="false" />)}
+      </div>)}
+    </div>
+    <div class="carousel-edge carousel-edge--left" aria-hidden="true"></div><div class="carousel-edge carousel-edge--right" aria-hidden="true"></div>
+  </div>
+</div>

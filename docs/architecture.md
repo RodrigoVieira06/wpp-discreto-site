@@ -1,6 +1,6 @@
 # Architecture
 
-Astro prerenders the landing page to static HTML. TypeScript handles the site appearance and isolated fictional product demonstrations; SCSS supplies the brand and visual styles on top of the provided design system. No React hydration, server, database or API is needed.
+Astro prerenders the landing page to static HTML. TypeScript handles the site appearance, active navigation and bounded background motion; SCSS supplies the brand and visual styles on top of the provided design system. No React hydration, server, database or API is needed.
 
 | Path | Responsibility |
 | --- | --- |
@@ -16,4 +16,4 @@ Astro prerenders the landing page to static HTML. TypeScript handles the site ap
 | public/fonts | Local Onest variable font and its OFL license |
 | tests | Jest behavior tests |
 
-Only the website theme is persisted locally, under wpp-site-theme. Storage errors fall back to an in-memory selection. The product demonstration mutates its own DOM and never contacts WhatsApp or saves conversation names. The download action opens the verified Chrome Web Store listing, not a fabricated installation flow.
+Only the website theme is persisted locally, under wpp-site-theme. Storage errors fall back to an in-memory selection. The carousel uses local product captures and never contacts WhatsApp or saves conversation names. The download action opens the verified Chrome Web Store listing, not a fabricated installation flow.

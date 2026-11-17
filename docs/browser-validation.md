@@ -49,3 +49,21 @@ The final layout check found no findings at 1024, 820, 768 and 390 px after the 
 
 
 Final performance result: 0 FAIL and 5 WARN across desktop/mobile. Transfer was 414 KiB desktop and 379 KiB mobile, with zero measured layout shift and no broken requests. Remaining warnings concern the font size, one repeated icon classified below the fold, and the mobile theme captures' source-to-display resolution. These are recorded optimizations, not a claimed all-green performance report.
+
+## Owner-requested layout refinement
+
+The owner rejected viewport-sized gaps and the initial sparse chat mock. Content sections now use natural heights, including the kit's higher-specificity mobile rules. Copy roles are 18 px desktop / 16 px mobile, separate from bounded UI metadata and display headings. The description of extension themes no longer includes a website theme selector. The website retains its header toggle with a circular View Transition and reduced-motion fallback. Scroll updates a header progress line and aria-current navigation. The richer fictional chat uses Família Vieira, sidebar filters/search and familiar WhatsApp panel/bubble colors. The previous gate report describes the superseded full-screen layout and is historical, not validation of these changes.
+
+The current Impeccable detector returned no findings. Biome, Astro diagnostics, four Jest tests and the production build passed. Updated desktop dark and mobile light renders are in .local/refined-desktop.png and .local/refined-mobile.png.
+
+Browser assertions on the refined build passed animated theme switching, removal of the inline website theme selector, Família Vieira naming, active-section navigation, scroll progress, natural section sizing and no horizontal overflow at 390 px. The verification script was corrected to read contact labels rather than matching its own inline script text. The temporary verification route was removed. The static preview remains available on port 4321.
+
+
+## Capture carousel, 2026-11-16
+
+Regenerated five product captures from the store HTML and real popup runtime in Firefox, with the owner's fictional contact names. Chrome's local capture runner stalled; it was stopped and Firefox was used to complete the capture and browser checks. Browser assertions passed image loading, explicit pause (aria-pressed=true and computed animation-play-state=paused), resume, removal of the hero fact, and no horizontal overflow at 1440 px and the Firefox minimum window width of 500 px. Desktop and narrow screenshots are .local/carousel-desktop.png and .local/carousel-mobile.png. This round does not claim a fresh 390 px browser run. Reduced-motion behavior is implemented in CSS. The static preview on port 4321 serves the updated build.
+
+
+## Ambient motion, 2026-11-17
+
+Firefox browser assertions confirmed a decorative aria-hidden background with pointer-events:none, no desktop horizontal overflow, a bounded scroll shift (-7.55 px at the tested position), section divider focus updates, and the pause control setting aria-pressed=true and animation-play-state=paused. Light and dark screenshots were captured in .local/ambient-light.png and .local/ambient-dark.png. Reduced-motion alternatives are present in CSS; this run does not claim a system-level reduced-motion browser test or measured frame-rate results. Biome, Astro diagnostics, Jest and build are run for this change.

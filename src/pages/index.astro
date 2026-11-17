@@ -1,12 +1,12 @@
 ---
 import Page from '../layouts/Page.astro';
 import InstallLink from '../components/InstallLink.astro';
-import ProductDemo from '../components/ProductDemo.astro';
+import ProductCarousel from '../components/ProductCarousel.astro';
 import { site } from '../lib/site';
 ---
 <Page>
   <!-- software; centred hero, approved green brand palette, Onest; word-highlight in data section. -->
-  <header class="nav nav--centre">
+  <header class="nav nav--centre"><div class="reading-progress" aria-hidden="true"></div>
     <div class="wrap nav__bar">
       <a class="skip-link" href="#top">Pular para o conteúdo</a>
       <a class="nav__logo" href="#top"><img src="/brand/icon-128.png" width="36" height="36" alt="" />Wpp Discreto</a>
@@ -23,18 +23,18 @@ import { site } from '../lib/site';
   <main id="top">
     <section class="hero hero--centred" data-enter aria-labelledby="hero-title">
       <div class="wrap"><div class="hero-text">
-        <div class="hero__c"><h1 id="hero-title">Desfoque no<br />WhatsApp Web</h1><p class="hero__lead">Escolha quais mensagens e mídias ficam visíveis. Use apelidos para grupos e contatos sem alterar os nomes originais.</p><div class="btn-row"><InstallLink /><a class="btn btn--secondary" href="#recursos">Ver recursos</a></div><p class="hero-fact">Área legível de 20% a 100%.</p></div>
-        <div class="hero__window"><ProductDemo id="hero" controls /></div>
+        <div class="hero__c"><h1 id="hero-title">Desfoque no<br />WhatsApp Web</h1><p class="hero__lead">Escolha quais mensagens e mídias ficam visíveis. Use apelidos para grupos e contatos sem alterar os nomes originais.</p><div class="btn-row"><InstallLink /><a class="btn btn--secondary" href="#recursos">Ver recursos</a></div></div>
+        <ProductCarousel />
       </div></div>
     </section>
     <section id="recursos" class="section" aria-labelledby="features-title">
-      <div class="wrap"><h2 id="features-title">Ajustes para cada conversa</h2><p class="section-lead">Experimente a área legível e o apelido nesta demonstração. Na extensão, você também escolhe fotos, vídeos e figurinhas para embaçar.</p><div class="feature-demo"><ProductDemo id="features" controls /></div><p class="body-note">As mídias selecionadas ficam embaçadas mesmo com o texto visível. A prévia de envio permanece legível enquanto você prepara uma imagem.</p></div>
+      <div class="wrap"><h2 id="features-title">Ajustes para cada conversa</h2><p class="section-lead">Crie apelidos para grupos e contatos sem mudar os nomes no WhatsApp. Escolha também quais mensagens e mídias ficam visíveis.</p><img class="feature-capture" src="/product/screenshots/aliases.png" width="1280" height="800" loading="lazy" alt="Interface real de edição de apelidos ao lado de uma conversa fictícia no WhatsApp" /><p class="body-note">As mídias selecionadas ficam embaçadas mesmo com o texto visível. A prévia de envio permanece legível enquanto você prepara uma imagem.</p></div>
     </section>
     <section id="aparencia" class="section" aria-labelledby="appearance-title">
-      <div class="wrap"><h2 id="appearance-title">Temas claro e escuro</h2><div class="appearance-layout"><div><p class="section-lead">Escolha um tema ou acompanhe a preferência do sistema. Na extensão, o tamanho do texto pode variar de 14 a 18 px.</p><fieldset class="theme-options"><legend>Tema do site</legend><label><input type="radio" name="theme" value="auto" checked />Automático</label><label><input type="radio" name="theme" value="light" />Claro</label><label><input type="radio" name="theme" value="dark" />Escuro</label></fieldset></div><div class="product-appearance"><img src="/product/popup-dark.png" width="380" height="600" loading="lazy" alt="Interface da extensão no tema escuro" /><img src="/product/popup-light.png" width="380" height="600" loading="lazy" alt="Interface da extensão no tema claro" /></div></div></div>
+      <div class="wrap"><h2 id="appearance-title">Temas claro e escuro</h2><div class="appearance-layout"><div><p class="section-lead">Na extensão, escolha entre claro, escuro ou automático para acompanhar seu sistema. Ajuste também o tamanho do texto, de 14 a 18 px.</p></div><div class="product-appearance"><img src="/product/popup-dark.png" width="380" height="600" loading="lazy" alt="Interface da extensão no tema escuro" /><img src="/product/popup-light.png" width="380" height="600" loading="lazy" alt="Interface da extensão no tema claro" /></div></div></div>
     </section>
     <section id="dados" class="section" aria-labelledby="data-title">
-      <div class="wrap"><h2 id="data-title">Os ajustes ficam no navegador</h2><div data-moment="word-highlight"><p class="mo-wh__text">Seus apelidos e preferências ficam neste navegador. O Wpp Discreto preserva os nomes originais e não envia o conteúdo das conversas a servidores externos.</p></div><div class="data-details"><p>O desfoque muda a exibição da página. Ele não criptografa mensagens nem bloqueia o acesso técnico ao conteúdo.</p><a class="link" href={site.policyUrl}>Ler política de dados</a></div></div>
+      <div class="wrap"><h2 id="data-title">Os ajustes ficam no navegador</h2><div class="data-summary"><p>Seus apelidos e preferências ficam neste navegador. O Wpp Discreto preserva os nomes originais e não envia o conteúdo das conversas a servidores externos.</p></div><div class="data-details"><p>O desfoque muda a exibição da página. Ele não criptografa mensagens nem bloqueia o acesso técnico ao conteúdo.</p><a class="link" href={site.policyUrl}>Ler política de dados</a></div></div>
     </section>
   </main>
   <footer class="closing footer-columns" id="duvidas">
