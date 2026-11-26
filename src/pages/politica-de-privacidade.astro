@@ -1,0 +1,50 @@
+---
+import { Content as DataPolicy } from '../../DATA_POLICY.md';
+import Page from '../layouts/Page.astro';
+---
+
+<Page
+  lang="en"
+  title="Wpp Discreto data protection policy"
+  description="How the Wpp Discreto extension uses and stores data in your browser."
+>
+  <main class="wrap policy-page">
+    <a class="link" href="/">Back to Wpp Discreto</a>
+    <article>
+      <DataPolicy />
+    </article>
+  </main>
+</Page>
+
+<style>
+  .policy-page {
+    max-width: 780px;
+    padding-block: clamp(3rem, 8vw, 6rem);
+  }
+
+  article {
+    margin-block-start: 2rem;
+    overflow-wrap: anywhere;
+  }
+
+  article :global(h1) {
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    line-height: 1.15;
+  }
+
+  article :global(h2) {
+    margin-block: 2rem 0.75rem;
+    font-size: 1.5rem;
+  }
+
+  article :global(p) {
+    margin-block: 1rem;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  article :global(a) {
+    color: var(--p-accent);
+    text-decoration: underline;
+  }
+</style>

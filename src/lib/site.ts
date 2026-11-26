@@ -3,7 +3,6 @@ export const site = {
   storeUrl:
     'https://chromewebstore.google.com/detail/okfikehehjcjkmfbggdlealmdmiomchn',
   repositoryUrl: 'https://github.com/RodrigoVieira06/wpp-discreto',
-  policyUrl:
-    'https://github.com/RodrigoVieira06/wpp-discreto-site/blob/main/DATA_POLICY.md',
+  policyUrl: '/politica-de-privacidade/',
   supportUrl: 'https://github.com/RodrigoVieira06/wpp-discreto/issues',
 };

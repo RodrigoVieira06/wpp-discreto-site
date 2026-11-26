@@ -26,4 +26,4 @@ Publisher: Rodrigo Lima.
 
 For support or questions about this policy, contact [rodrigovlima06@gmail.com](mailto:rodrigovlima06@gmail.com).
 
-Public policy URL: [DATA_POLICY.md](https://github.com/RodrigoVieira06/wpp-discreto-site/blob/main/DATA_POLICY.md).
+Public policy URL: [Wpp Discreto website](https://wpp-discreto-site.vercel.app/politica-de-privacidade/).
