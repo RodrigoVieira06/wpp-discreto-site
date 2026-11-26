@@ -32,6 +32,6 @@ See docs/browser-validation.md for the browser scope, visual corrections and rem
 
 Import this repository, keep the root directory as `./`, select Astro and Node 24, and add `ENABLE_EXPERIMENTAL_COREPACK=1` before the first deploy. The committed `vercel.json` sets the frozen pnpm install, build command and `dist` output. Set `PUBLIC_SITE_URL` to the actual production HTTPS origin once the domain is selected. See [deployment instructions](docs/deployment.md).
 
-[Chrome extension](https://chromewebstore.google.com/detail/okfikehehjcjkmfbggdlealmdmiomchn) · [Extension source](https://github.com/RodrigoVieira06/wpp-discreto)
+[Chrome extension](https://chromewebstore.google.com/detail/okfikehehjcjkmfbggdlealmdmiomchn) · [Extension data policy](DATA_POLICY.md) · [Extension source](https://github.com/RodrigoVieira06/wpp-discreto)
 
 Developed by Rodrigo Lima. Independent project, not affiliated with WhatsApp or Meta.
